@@ -1,0 +1,77 @@
+:root {
+  --font-size-small: 0.75rem;
+  --font-size-mid: 1rem;
+  --font-size-large: 1.25rem;
+  --font-size-x-large: 1.5rem;
+
+  --backgound: #222222;
+  --avatar-backgound: #b11c52;
+  --avatar-text: white;
+
+  --header-height: 50px;
+  --header-image-width: 100px;
+  --header-search-width: 30px;
+  --header-personal-width: 30px;
+}
+
+body {
+  margin: 0px;
+}
+.flex-space {
+  flex-grow: 1;
+}
+
+.header {
+  display: flex;
+  padding: 5px 10px;
+  background-color: var(--backgound);
+  height: var(--header-height);
+}
+
+.header .logo-container {
+  width: var(--header-image-width);
+  height: 100%;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+.header .logo-container img {
+  width: 70%;
+  max-height: calc(var(--header-height) - 5px);
+}
+
+.header .search-container {
+  width: var(--header-search-width);
+  margin-right: 10px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+.header .search-container .search-image {
+  width: 70%;
+  max-height: calc(var(--header-height) - 5px);
+}
+
+.header .personal-container {
+  width: var(--header-personal-width);
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+.header .personal-container .personal-avatar {
+  width: var(--header-personal-width);
+  height: var(--header-personal-width);
+  background-color: var(--avatar-backgound);
+  color: var(--avatar-text);
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.header .personal-container .personal-avatar .personal-avatar-text {
+  margin: 0 auto;
+  font-size: var(--font-size-small);
+}
