@@ -7,11 +7,15 @@
   --backgound: #222222;
   --avatar-backgound: #b11c52;
   --avatar-text: white;
+  --chip-background: #3d3d3d;
 
   --header-height: 50px;
   --header-image-width: 100px;
   --header-search-width: 30px;
   --header-personal-width: 30px;
+  --tabbar-height: 50px;
+  --tabber-explore-width: 20px;
+  --tabber-chip-container-width: auto;
 }
 
 body {
@@ -74,4 +78,56 @@ body {
 .header .personal-container .personal-avatar .personal-avatar-text {
   margin: 0 auto;
   font-size: var(--font-size-small);
+}
+
+.tabbar {
+  height: var(--tabbar-height);
+  background-color: var(--backgound);
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  overflow-y: hidden;
+  padding: 5px 10px;
+}
+.tabber .chip-divider-renderer {
+  width: 10px;
+  margin: 8px 12px 0 0;
+  background-color: white;
+  display: flex;
+  border-right: 1px;
+}
+.tabbar .chip-container {
+  background-color: var(--chip-background);
+  padding: 0px 12px;
+  width: var(--tabber-chip-container-width);
+  white-space: nowrap;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  margin: 8px 8px;
+  border-radius: 16px;
+}
+.tabbar .chip-container-explore {
+  background-color: var(--chip-background);
+  padding: 0px 12px;
+  width: var(--tabber-chip-container-width);
+  white-space: nowrap;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  margin: 8px 8px;
+  border-radius: 4px;
+}
+.tabbar .chip-container-explore .explore-image {
+  width: var(--tabber-explore-width);
+  margin-right: 6px;
+}
+
+.tabbar .chip-container .tabber-text {
+  white-space: nowrap;
+  color: white;
+}
+.tabbar .chip-container-explore .tabber-text {
+  white-space: nowrap;
+  color: white;
 }
