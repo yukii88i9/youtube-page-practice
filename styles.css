@@ -5,17 +5,21 @@
   --font-size-x-large: 1.5rem;
 
   --backgound: #222222;
+  --border: #414040;
   --avatar-backgound: #b11c52;
   --avatar-text: white;
   --chip-background: #3d3d3d;
+  --chip-active-background: white;
+  --chip-text: white;
+  --chip-active-text: #3d3d3d;
 
   --header-height: 50px;
   --header-image-width: 100px;
   --header-search-width: 30px;
   --header-personal-width: 30px;
   --tabbar-height: 50px;
-  --tabber-explore-width: 20px;
-  --tabber-chip-container-width: auto;
+  --tabbar-explore-width: 20px;
+  --tabbar-chip-container-width: auto;
 }
 
 body {
@@ -30,6 +34,9 @@ body {
   padding: 5px 10px;
   background-color: var(--backgound);
   height: var(--header-height);
+  border-bottom-style: solid;
+  border-bottom-color: var(--border);
+  border-bottom-width: 1px;
 }
 
 .header .logo-container {
@@ -89,45 +96,50 @@ body {
   overflow-y: hidden;
   padding: 5px 10px;
 }
-.tabber .chip-divider-renderer {
-  width: 10px;
-  margin: 8px 12px 0 0;
-  background-color: white;
-  display: flex;
-  border-right: 1px;
+.tabbar::-webkit-scrollbar {
+  display: none;
+}
+
+.tabbar .chip-divider-renderer {
+  height: 25px;
+  margin: auto 5px;
+  border-right: solid;
+  border-right-color: var(--border);
+  border-right-width: 1.5px;
 }
 .tabbar .chip-container {
   background-color: var(--chip-background);
   padding: 0px 12px;
-  width: var(--tabber-chip-container-width);
+  width: var(--tabbar-chip-container-width);
   white-space: nowrap;
   display: flex;
   justify-self: center;
   align-items: center;
   margin: 8px 8px;
   border-radius: 16px;
-}
-.tabbar .chip-container-explore {
-  background-color: var(--chip-background);
-  padding: 0px 12px;
-  width: var(--tabber-chip-container-width);
-  white-space: nowrap;
-  display: flex;
-  justify-self: center;
-  align-items: center;
-  margin: 8px 8px;
-  border-radius: 4px;
-}
-.tabbar .chip-container-explore .explore-image {
-  width: var(--tabber-explore-width);
-  margin-right: 6px;
+  cursor: pointer;
 }
 
-.tabbar .chip-container .tabber-text {
-  white-space: nowrap;
-  color: white;
+.tabbar .chip-container.active {
+  background-color: var(--chip-active-background);
 }
-.tabbar .chip-container-explore .tabber-text {
-  white-space: nowrap;
-  color: white;
+
+
+.tabbar .chip-container.explore .explore-image {
+  width: var(--tabbar-explore-width);
+  margin-right: 6px;
 }
+.tabbar .chip-container.explore .tabbar-text {
+  white-space: nowrap;
+  color: var(--chip-text);
+}
+
+.tabbar .chip-container .tabbar-text {
+  white-space: nowrap;
+  color: var(--chip-text);
+}
+.tabbar .chip-container.active .tabbar-text {
+  white-space: nowrap;
+  color: var(--chip-active-text);
+}
+
